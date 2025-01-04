@@ -53,3 +53,42 @@
 2. 如果你最近更改了远程仓库的权限设置，确保你的SSH密钥或访问令牌是最新的，并且已经添加到你的Git账户中。
 
 通过上述步骤，你应该能够解决“error: 源引用规格 master 没有匹配”的问题，并成功推送你的更改到远程仓库。
+
+现在已经成功登录到Raspberrypi_3b+上
+需要一个网线，并且共享电脑的网络给树莓派网口
+再设置vnc和wifi，目前可以正常使用树莓派的linux系统
+
+关于如何设置github的分支
+要将本地的 master 分支指向远程仓库中的 origin/master，你可以按照以下步骤操作：
+
+1. 检查当前分支和远程仓库
+首先，确保你当前在 master 分支，并且已经配置了远程仓库。你可以使用以下命令来检查：
+
+bash
+git branch    # 查看当前分支
+git remote -v # 查看远程仓库配置
+如果 git branch 显示 * master，说明你已经在 master 分支。如果 git remote -v 显示了远程仓库的信息（例如 origin），说明远程仓库已经配置好了。
+
+2. 确保本地 master 分支与远程 origin/master 同步
+为了确保本地 master 分支与远程 origin/master 是一致的，建议先拉取最新的代码：
+
+bash
+git pull origin master
+这会将远程 origin/master 的最新更改合并到本地 master 分支中。如果有冲突，Git 会提示你解决冲突。
+
+3. 设置本地 master 分支跟踪远程 origin/master
+如果你希望本地 master 分支自动跟踪远程的 origin/master，可以使用以下命令：
+
+bash
+git branch --set-upstream-to=origin/master master
+这条命令的作用是将本地的 master 分支设置为跟踪远程的 origin/master。之后，当你执行 git pull 或 git push 时，Git 会自动与远程的 origin/master 进行交互。
+
+4. 验证设置是否成功
+你可以通过以下命令验证本地 master 分支是否已经正确设置为跟踪远程 origin/master：
+
+bash
+git status
+如果设置成功，你会看到类似如下的输出：
+
+Your branch is up to date with 'origin/master'.
+
