@@ -1,1 +1,2 @@
 https://blog.csdn.net/liwang2016384/article/details/137923694 Change the mirror of python install source.
+https://blog.csdn.net/bragen/article/details/129131278 The reason of failure to run tensorflow with gpu.
