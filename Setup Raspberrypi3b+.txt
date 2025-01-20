@@ -2,3 +2,5 @@
 2.Raspi Source change:https://blog.csdn.net/qq_44214671/article/details/110846110 
 https://blog.csdn.net/m0_58003757/article/details/136922199 and https://shumeipai.nxez.com/2024/11/11/raspberry-pi-os-chinese-software-source.html can fix it.
 My raspi is bookworm sys. The source should modify the code of bookworm.
+3.Setup wiringPi :https://blog.csdn.net/ICXBK/article/details/108461743
+4.Pi Dashboard setup：https://make.quwj.com/project/10 ; help me install php 点击链接查看和 Kimi 智能助手的对话 https://kimi.moonshot.cn/share/cu7735m1bb2v0gqmlh70;点击链接查看和 Kimi 智能助手的对话 https://kimi.moonshot.cn/share/cu777e495ebem6dqug90
