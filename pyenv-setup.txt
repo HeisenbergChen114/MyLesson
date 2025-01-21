@@ -1,0 +1,3 @@
+How to change source of pyenv https://blog.csdn.net/qq_43213352/article/details/104343365
+How to setup pyenv https://www.doubao.com/thread/w279656b3386d9dd2
+
