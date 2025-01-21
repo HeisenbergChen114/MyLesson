@@ -4,3 +4,5 @@ https://tensorflow.google.cn/install/source_windows?hl=en tensorflow version 2.1
 Version	Python version	Compiler	Build tools	cuDNN	CUDA
 tensorflow_gpu-2.10.0	3.7-3.10	MSVC 2019	Bazel 5.1.1	8.1	11.2
 
+How to change python pip source https://www.cnblogs.com/137point5/p/15000954.html
+
