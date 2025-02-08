@@ -40,6 +40,9 @@ set(LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib/aa)#设置库文件输出
 link_libraries(calc)
 link_directories(${PROJECT_SOURCE_DIR}/lib1)
 
+# 链接动态库
+
+
 当将静态库和动态库编译追加到应用程序以及加载到内存时，有以下不同的行为：
 
 **静态库**：
