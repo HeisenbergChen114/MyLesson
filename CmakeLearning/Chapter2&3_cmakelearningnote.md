@@ -67,3 +67,6 @@ link_directories(${PROJECT_SOURCE_DIR}/lib1)
  - 如果动态库在运行时找不到，或者版本不匹配，可能会导致应用程序无法运行。
 
 总的来说，静态库在编译时就完成了所有的代码合并，而动态库在运行时根据需要进行加载和链接。
+
+https://blog.csdn.net/xhtchina/article/details/121535829 ,学会如何安装gdb-dashboard来调试程序
+需要进行配置文件调整来更好运行
