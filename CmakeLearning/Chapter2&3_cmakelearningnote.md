@@ -1,5 +1,5 @@
 # 1.关于set文件名和设置cpp的版本以及可执行文件输出路径
-
+```cmake
 set(Src_List FunctionObject1.cpp)#作为字符串变量
 set(CMAKE_CXX_STANDARD 11)#设置C++11标准，由set指定；还可以通过命令行指定,-DCMAKE_CXX_STANDARD=11
 #set(CMAKE_CXX_STANDARD_REQUIRED ON)#设置C++11标准为必须，由set指定；还可以通过命令行指定,-DCMAKE_CXX_STANDARD_REQUIRED=ON
@@ -10,6 +10,7 @@ set(CMAKE_CXX_STANDARD 11)#设置C++11标准，由set指定；还可以通过命
 #指定输出可执行程序路径，也可以是绝对和相对路径
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin/aa/bb/cc)
 add_executable(test ${Src_List})
+```
 
 # 2.搜索的方式来添加源文件
 ```cmake
@@ -25,15 +26,16 @@ target_include_directories(${PROJECT_SOURCE_DIR}/include)#找到头文件目录
 ```
 
 # 3.动态库和静态库的输出
-
+```cmake
 #add_library(calc SHARED ${SRC_LIST})#动态库制作
 add_library(calc STATIC ${SRC_LIST})#静态库制作
 #add_executable(MyApp ${SRC_LIST})
 
 set(LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib/aa)#设置库文件输出路径
-
+```
 # 4.库的导入（包含系统和自定义库）
 # 链接静态库
+```cmake
 #1.
 #link_libraries(${PROJECT_SOURCE_DIR}/lib1/libcalc.a)
 #2.
@@ -42,7 +44,7 @@ link_directories(${PROJECT_SOURCE_DIR}/lib1)
 
 # 链接动态库
 
-
+```
 当将静态库和动态库编译追加到应用程序以及加载到内存时，有以下不同的行为：
 
 **静态库**：
