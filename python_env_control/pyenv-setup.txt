@@ -31,3 +31,5 @@ Python 3.8.0
 
 now i can download boostlib on proxy and setup .
 It takes me several hour to bulid.
+
+https://www.oryoy.com/news/qing-song-shang-shou-shu-mei-pai-lan-ya-lian-jie-quan-gong-lve-python-ku-an-zhuang-xiang-jie.html
