@@ -29,7 +29,8 @@ pi@raspberrypi:~/.pyenv/versions $ source myPython3.8venv/bin/activate
 Python 3.8.0
 (myPython3.8venv) pi@raspberrypi:~/.pyenv/versions $ 
 
-now i can download boostlib on proxy and setup .
+now i can download boostlib on proxy and setup.
 It takes me several hour to bulid.
 
+How To setup PyBluez and set wifi.
 https://www.oryoy.com/news/qing-song-shang-shou-shu-mei-pai-lan-ya-lian-jie-quan-gong-lve-python-ku-an-zhuang-xiang-jie.html
