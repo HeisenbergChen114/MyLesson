@@ -1,0 +1,36 @@
+How to change source of pyenv https://blog.csdn.net/qq_43213352/article/details/104343365
+How to setup pyenv https://www.doubao.com/thread/w279656b3386d9dd2
+pyenv need to download python-version.tar.xz to ~/.pyenv/cache for install quickly.At the same time, we need to setup the dependency of built and make.
+
+
+When I want to switch the venv, I need to do this
+
+pi@raspberrypi:~/.pyenv $ cd versions/
+pi@raspberrypi:~/.pyenv/versions $ ls
+3.8.0  myPython3.8venv
+pi@raspberrypi:~/.pyenv/versions $ ls -l
+总计 4
+drwxr-xr-x 7 pi pi 4096  1月21日 21:29 3.8.0
+lrwxrwxrwx 1 pi pi   51  1月21日 21:29 myPython3.8venv -> /home/pi/.pyenv/versions/3.8.0/envs/myPython3.8venv
+pi@raspberrypi:~/.pyenv/versions $ source myPython3.8venv/
+bin/        include/    lib/        pyvenv.cfg  
+pi@raspberrypi:~/.pyenv/versions $ source myPython3.8venv/
+bin/        include/    lib/        pyvenv.cfg  
+pi@raspberrypi:~/.pyenv/versions $ source myPython3.8venv/bin/
+activate          Activate.ps1      pip               pydoc             python3.8-config
+activate.csh      easy_install      pip3              python            python3-config
+activate.fish     easy_install-3.8  pip3.8            python3           python-config
+pi@raspberrypi:~/.pyenv/versions $ source myPython3.8venv/bin/
+activate          Activate.ps1      pip               pydoc             python3.8-config
+activate.csh      easy_install      pip3              python            python3-config
+activate.fish     easy_install-3.8  pip3.8            python3           python-config
+pi@raspberrypi:~/.pyenv/versions $ source myPython3.8venv/bin/activate
+(myPython3.8venv) pi@raspberrypi:~/.pyenv/versions $ python --version
+Python 3.8.0
+(myPython3.8venv) pi@raspberrypi:~/.pyenv/versions $ 
+
+now i can download boostlib on proxy and setup.
+It takes me several hour to bulid.
+
+How To setup PyBluez and set wifi.
+https://www.oryoy.com/news/qing-song-shang-shou-shu-mei-pai-lan-ya-lian-jie-quan-gong-lve-python-ku-an-zhuang-xiang-jie.html

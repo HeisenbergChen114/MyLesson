@@ -1,0 +1,94 @@
+这是之前需要push master分支时候所需要的提示，创建了master分支，并且head指向了master处
+
+
+在使用Git进行`push`操作时，如果遇到错误信息“error: 源引用规格 master 没有匹配”，这通常意味着你尝试推送的本地分支`master`在远程仓库`origin`中不存在对应的分支。
+
+以下是一些可能的原因和相应的解决方案：
+
+### 原因1：远程仓库中没有名为`master`的分支
+如果你之前没有在远程仓库中创建过`master`分支，或者远程仓库中的`master`分支已经被删除，那么当你尝试推送到这个分支时就会出现这个错误。
+
+**解决方案：**
+1. 首先，在本地创建并切换到`master`分支（如果还没有创建）：
+   ```sh
+   git checkout -b master
+   ```
+2. 将本地的`master`分支初始化推送到远程仓库：
+   ```sh
+   git push -u origin master
+   ```
+   这将创建远程的`master`分支并将其设置为跟踪本地的`master`分支。
+
+### 原因2：远程仓库的默认分支名被更改
+在某些情况下，远程仓库的默认分支名可能被更改为`main`或其他名称，而不是`master`。
+
+**解决方案：**
+1. 检查远程仓库的默认分支名：
+   ```sh
+   git branch -r
+   ```
+2. 如果远程仓库的默认分支名不是`master`，你需要推送到正确的分支名。例如，如果默认分支名是`main`，则使用：
+   ```sh
+   git push origin main:main
+   ```
+
+### 原因3：本地分支落后于远程分支
+如果你的本地分支落后于远程分支，Git可能会阻止非快进（non-fast-forward）的推送，以防止数据丢失。
+
+**解决方案：**
+1. 先从远程仓库拉取最新的更改并合并到你的本地分支：
+   ```sh
+   git pull origin master:master
+   ```
+2. 再次尝试推送：
+   ```sh
+   git push origin master:master
+   ```
+
+### 原因4：远程仓库权限问题
+如果你没有足够的权限推送到远程仓库的`master`分支，也可能会导致这个错误。
+
+**解决方案：**
+1. 确认你的远程仓库URL是否正确，并且你有权限访问。
+2. 如果你最近更改了远程仓库的权限设置，确保你的SSH密钥或访问令牌是最新的，并且已经添加到你的Git账户中。
+
+通过上述步骤，你应该能够解决“error: 源引用规格 master 没有匹配”的问题，并成功推送你的更改到远程仓库。
+
+现在已经成功登录到Raspberrypi_3b+上
+需要一个网线，并且共享电脑的网络给树莓派网口
+再设置vnc和wifi，目前可以正常使用树莓派的linux系统
+
+关于如何设置github的分支
+要将本地的 master 分支指向远程仓库中的 origin/master，你可以按照以下步骤操作：
+
+1. 检查当前分支和远程仓库
+首先，确保你当前在 master 分支，并且已经配置了远程仓库。你可以使用以下命令来检查：
+
+bash
+git branch    # 查看当前分支
+git remote -v # 查看远程仓库配置
+如果 git branch 显示 * master，说明你已经在 master 分支。如果 git remote -v 显示了远程仓库的信息（例如 origin），说明远程仓库已经配置好了。
+
+2. 确保本地 master 分支与远程 origin/master 同步
+为了确保本地 master 分支与远程 origin/master 是一致的，建议先拉取最新的代码：
+
+bash
+git pull origin master
+这会将远程 origin/master 的最新更改合并到本地 master 分支中。如果有冲突，Git 会提示你解决冲突。
+
+3. 设置本地 master 分支跟踪远程 origin/master
+如果你希望本地 master 分支自动跟踪远程的 origin/master，可以使用以下命令：
+
+bash
+git branch --set-upstream-to=origin/master master
+这条命令的作用是将本地的 master 分支设置为跟踪远程的 origin/master。之后，当你执行 git pull 或 git push 时，Git 会自动与远程的 origin/master 进行交互。
+
+4. 验证设置是否成功
+你可以通过以下命令验证本地 master 分支是否已经正确设置为跟踪远程 origin/master：
+
+bash
+git status
+如果设置成功，你会看到类似如下的输出：
+
+Your branch is up to date with 'origin/master'.
+
